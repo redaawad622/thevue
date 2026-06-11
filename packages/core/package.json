@@ -1,0 +1,42 @@
+{
+  "name": "@thevue/core",
+  "type": "module",
+  "version": "0.0.1",
+  "description": "Design tokens, theme engine and Vue plugin — the foundation of the thevue framework",
+  "license": "MIT",
+  "homepage": "https://github.com/redaawad622/thevue/tree/main/packages/core#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/redaawad622/thevue.git",
+    "directory": "packages/core"
+  },
+  "keywords": [
+    "vue",
+    "thevue",
+    "design-tokens",
+    "theming"
+  ],
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs"
+    },
+    "./style": "./dist/style.css"
+  },
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsx scripts/generate-css.ts && vite build",
+    "dev": "vite build --watch",
+    "test": "vitest run"
+  },
+  "peerDependencies": {
+    "vue": ">=3.3.0"
+  }
+}
