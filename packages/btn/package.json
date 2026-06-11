@@ -1,0 +1,42 @@
+{
+  "name": "@thevue/btn",
+  "type": "module",
+  "version": "0.0.1",
+  "description": "Btn component for the thevue framework",
+  "license": "MIT",
+  "homepage": "https://github.com/redaawad622/thevue/tree/main/packages/btn#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/redaawad622/thevue.git",
+    "directory": "packages/btn"
+  },
+  "keywords": [
+    "vue",
+    "thevue",
+    "btn"
+  ],
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs"
+    },
+    "./style": "./dist/style.css"
+  },
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "vite build",
+    "dev": "vite build --watch",
+    "test": "vitest run"
+  },
+  "peerDependencies": {
+    "@thevue/core": "workspace:*",
+    "vue": ">=3.3.0"
+  }
+}

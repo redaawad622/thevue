@@ -48,6 +48,11 @@ export function createLibConfig(options: LibConfigOptions): ViteUserConfig {
         ],
       },
     },
+    // pre-bundle the deps every test file touches so the optimizer never
+    // discovers them mid-run and reloads (which breaks Vue module identity)
+    optimizeDeps: {
+      include: ['vue', 'vitest-browser-vue'],
+    },
     test: {
       browser: {
         enabled: true,

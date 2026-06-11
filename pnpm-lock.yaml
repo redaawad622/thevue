@@ -60,6 +60,15 @@ importers:
         specifier: ^3.3.4
         version: 3.3.4(typescript@6.0.3)
 
+  packages/btn:
+    dependencies:
+      '@thevue/core':
+        specifier: workspace:*
+        version: link:../core
+      vue:
+        specifier: '>=3.3.0'
+        version: 3.5.35(typescript@6.0.3)
+
   packages/core:
     dependencies:
       vue:
