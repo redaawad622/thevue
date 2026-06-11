@@ -1,0 +1,45 @@
+{
+  "name": "@thevue/table",
+  "type": "module",
+  "version": "0.0.1",
+  "description": "DataTable component for the thevue framework",
+  "license": "MIT",
+  "homepage": "https://github.com/redaawad622/thevue/tree/main/packages/table#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/redaawad622/thevue.git",
+    "directory": "packages/table"
+  },
+  "keywords": [
+    "vue",
+    "thevue",
+    "table"
+  ],
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs"
+    },
+    "./style": "./dist/style.css"
+  },
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "vite build",
+    "dev": "vite build --watch",
+    "test": "vitest run"
+  },
+  "peerDependencies": {
+    "@thevue/core": "workspace:*",
+    "vue": ">=3.3.0"
+  },
+  "dependencies": {
+    "@tanstack/vue-table": "^8.21.3"
+  }
+}

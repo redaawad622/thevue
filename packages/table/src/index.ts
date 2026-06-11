@@ -1,0 +1,6 @@
+export { buildColumnDefs, defineColumns, SELECTION_COLUMN_ID } from './columns'
+export { default as DataTable } from './components/DataTable.vue'
+export { default as TablePagination } from './components/TablePagination.vue'
+export { useThevueTable } from './composables/useTable'
+export type { UseThevueTableOptions } from './composables/useTable'
+export type * from './types'
