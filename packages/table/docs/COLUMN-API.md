@@ -19,6 +19,7 @@ const columns = defineColumns<User>([
 | `key` | `string` | — | **Required.** Unique column id. Also the data key used to read the cell value when `accessor` is omitted. |
 | `header` | `string` | `key` | Header label text. |
 | `sortable` | `boolean` | `false` | When `true`, the header becomes a button that cycles none → asc → desc. |
+| `filterable` | `boolean` | `false` | When `true`, a text filter input is rendered in the header for this column. |
 | `accessor` | `(row: T) => unknown` | `row[key]` | Derive the cell value from the row. |
 | `cell` | `(ctx: CellContext<T>) => VNodeChild` | — | Render custom cell content instead of the raw value. |
 | `width` | `string` | — | Fixed column width (any CSS length, e.g. `'120px'`). |
@@ -96,3 +97,13 @@ prepended automatically (id exported as `SELECTION_COLUMN_ID`). You do **not**
 declare it in `columns`; it carries a select-all checkbox in the header and a
 per-row checkbox in the body, with accessible labels (`Select all rows`,
 `Select row N`).
+
+## Expander column
+
+When the `DataTable` `expandable` prop is set, a leading expander button column is
+prepended automatically (id exported as `EXPANDER_COLUMN_ID`). You do **not**
+declare it in `columns`; it contains a collapse/expand toggle button for each row.
+
+## Column resizing
+
+Columns are resizable if the `resizable` prop on `DataTable` is `true`. The selection and expander columns are not resizable. Column size defaults to `150px` if not specified by `width` or by default.

@@ -18,6 +18,8 @@ export interface ColumnOptions<T> {
   header?: string
   /** Allow click-to-sort on this column. */
   sortable?: boolean
+  /** Render a per-column text filter input in the header. */
+  filterable?: boolean
   /** Derive the cell value from the row (defaults to `row[key]`). */
   accessor?: (row: T) => unknown
   /** Render arbitrary content for the cell instead of the raw value. */
@@ -48,6 +50,18 @@ export interface DataTableProps<T = Record<string, unknown>> {
   selectable?: boolean
   /** Row density modifier. */
   density?: TableDensity
+  /** Show a control for toggling the visibility of individual columns. */
+  showColumnToggle?: boolean
+  /** Allow dragging column borders to resize them. */
+  resizable?: boolean
+  /** Allow rows to be expanded to show details. */
+  expandable?: boolean
+  /** Enable virtualized windowing of row rendering. */
+  virtual?: boolean
+  /** Pin the header to the top of the scroll container while scrolling. */
+  stickyHeader?: boolean
+  /** Constrain the table to a max height with a vertical scroll container. */
+  maxHeight?: string
 }
 
 export interface DataTableEmits<T = Record<string, unknown>> {

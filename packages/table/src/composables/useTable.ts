@@ -1,6 +1,9 @@
+import type { ExpandedState } from '@tanstack/vue-table'
 import type { ColumnOptions } from '../types'
 import {
   getCoreRowModel,
+  getExpandedRowModel,
+  getFilteredRowModel,
   getPaginationRowModel,
   getSortedRowModel,
   useVueTable,
@@ -14,6 +17,8 @@ export interface UseThevueTableOptions<T> {
   selectable?: () => boolean
   paginate?: () => boolean
   pageSize?: () => number
+  resizable?: () => boolean
+  expandable?: () => boolean
   /** Called with the currently selected row objects whenever selection changes. */
   onSelectionChange?: (rows: T[]) => void
 }
@@ -24,11 +29,17 @@ export interface UseThevueTableOptions<T> {
  */
 export function useThevueTable<T>(options: UseThevueTableOptions<T>) {
   const sorting = ref<{ id: string, desc: boolean }[]>([])
+  const columnFilters = ref<{ id: string, value: unknown }[]>([])
+  const columnVisibility = ref<Record<string, boolean>>({})
   const rowSelection = ref<Record<string, boolean>>({})
+  const expanded = ref<ExpandedState>({})
   const pagination = ref({ pageIndex: 0, pageSize: toValue(options.pageSize?.()) ?? 10 })
 
   const columnDefs = computed(() =>
-    buildColumnDefs(options.columns(), { selectable: options.selectable?.() }),
+    buildColumnDefs(options.columns(), {
+      selectable: options.selectable?.(),
+      expandable: options.expandable?.(),
+    }),
   )
 
   const table = useVueTable({
@@ -42,25 +53,47 @@ export function useThevueTable<T>(options: UseThevueTableOptions<T>) {
       get sorting() {
         return sorting.value
       },
+      get columnFilters() {
+        return columnFilters.value
+      },
+      get columnVisibility() {
+        return columnVisibility.value
+      },
       get rowSelection() {
         return rowSelection.value
+      },
+      get expanded() {
+        return expanded.value
       },
       get pagination() {
         return pagination.value
       },
     },
     enableRowSelection: () => options.selectable?.() ?? false,
+    enableColumnResizing: options.resizable?.() ?? false,
+    columnResizeMode: 'onChange',
     onSortingChange: (updater) => {
       sorting.value = typeof updater === 'function' ? updater(sorting.value) : updater
     },
+    onColumnFiltersChange: (updater) => {
+      columnFilters.value = typeof updater === 'function' ? updater(columnFilters.value) : updater
+    },
+    onColumnVisibilityChange: (updater) => {
+      columnVisibility.value = typeof updater === 'function' ? updater(columnVisibility.value) : updater
+    },
     onRowSelectionChange: (updater) => {
       rowSelection.value = typeof updater === 'function' ? updater(rowSelection.value) : updater
+    },
+    onExpandedChange: (updater) => {
+      expanded.value = typeof updater === 'function' ? updater(expanded.value) : updater
     },
     onPaginationChange: (updater) => {
       pagination.value = typeof updater === 'function' ? updater(pagination.value) : updater
     },
     getCoreRowModel: getCoreRowModel(),
+    getFilteredRowModel: getFilteredRowModel(),
     getSortedRowModel: getSortedRowModel(),
+    getExpandedRowModel: getExpandedRowModel(),
     getPaginationRowModel: options.paginate?.() ? getPaginationRowModel() : undefined,
   })
 
@@ -84,5 +117,5 @@ export function useThevueTable<T>(options: UseThevueTableOptions<T>) {
     { deep: true },
   )
 
-  return { table, sorting, rowSelection, pagination }
+  return { table, sorting, columnFilters, columnVisibility, rowSelection, expanded, pagination }
 }

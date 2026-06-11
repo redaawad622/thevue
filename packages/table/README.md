@@ -138,6 +138,57 @@ selection changes.
 `density` accepts `'default' | 'comfortable' | 'compact'` and only changes cell
 padding.
 
+## Column filtering
+
+Set `filterable: true` on any column option. Renders a text filter input in the header cell. Filtering is client-side.
+
+## Column visibility toggle
+
+```vue
+<DataTable :data="data" :columns="columns" show-column-toggle />
+```
+
+Renders a checkbox menu allowing users to toggle column visibility.
+
+## Column resizing
+
+```vue
+<DataTable :data="data" :columns="columns" resizable />
+```
+
+Enables column resizing by dragging drag handles on column borders in the header.
+
+## Sticky header
+
+```vue
+<DataTable :data="data" :columns="columns" sticky-header max-height="300px" />
+```
+
+Pins the table header to the top of the scroll container. Works in conjunction with `max-height`.
+
+## Row expansion
+
+```vue
+<DataTable :data="data" :columns="columns" expandable>
+  <template #expanded="{ row }">
+    <div class="user-details">
+      <h4>Details for {{ row.name }}</h4>
+      <p>Age: {{ row.age }}</p>
+    </div>
+  </template>
+</DataTable>
+```
+
+Renders an expander column/button per row. When clicked, the row expands to show details using the `#expanded` slot.
+
+## Virtual scrolling
+
+```vue
+<DataTable :data="largeDataset" :columns="columns" virtual max-height="400px" />
+```
+
+Uses virtualized rendering via `@tanstack/vue-virtual` to efficiently display thousands of rows with minimal DOM overhead.
+
 ## Props
 
 | Prop | Type | Default | Description |
@@ -150,6 +201,12 @@ padding.
 | `pageSize` | `number` | `10` | Rows per page when paginating |
 | `selectable` | `boolean` | `false` | Render a checkbox selection column |
 | `density` | `'default' \| 'comfortable' \| 'compact'` | `'default'` | Cell padding density |
+| `showColumnToggle` | `boolean` | `false` | Expose column visibility controls |
+| `resizable` | `boolean` | `false` | Allow dragging column headers to resize |
+| `expandable` | `boolean` | `false` | Enable row expansion |
+| `virtual` | `boolean` | `false` | Enable virtualized row rendering |
+| `stickyHeader` | `boolean` | `false` | Pin headers to the top while scrolling |
+| `maxHeight` | `string` | — | Max height for vertical scroll container |
 
 ## Events
 
@@ -159,9 +216,10 @@ padding.
 
 ## Slots
 
-| Slot | Description |
-| --- | --- |
-| `empty` | Content shown when `data` is empty and not loading |
+| Slot | Scope | Description |
+| --- | --- | --- |
+| `empty` | — | Content shown when `data` is empty and not loading |
+| `expanded` | `{ row: T }` | Content shown below an expanded row |
 
 ## Composable
 
