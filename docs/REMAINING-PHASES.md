@@ -14,11 +14,11 @@ without re-deriving context. The authoritative full plan is
 | 3 | `@thevue/icons` — Icon + registry | ✅ done (`6a6a94b`) |
 | 4 | `scripts/create-package.ts` | ✅ done (`fa82ade`) |
 | 5 | `@thevue/btn` — reference component | ✅ done (`fee3c3f`) |
-| **6a** | **`@thevue/table` core** | ✅ **done — this commit** |
-| 6b | table add-ons | ⬜ pending |
-| 7 | `@thevue/vue` bundle | ⬜ pending |
-| 8 | `apps/playground` | ⬜ pending |
-| 9 | `apps/docs` (VitePress) | ⬜ pending |
+| **6a** | **`@thevue/table` core** | ✅ done (`4bf4b61`) |
+| 6b | table add-ons | ✅ done (`e3b4ca8`) |
+| 7 | `@thevue/vue` bundle | ✅ done (`897ff3a`) |
+| 8 | `apps/playground` | ✅ done (`e972189`) |
+| 9 | `apps/docs` (VitePress) | ✅ done — this commit |
 
 **Test counts (all headless Chromium / browser mode):** core 21, icons 7,
 btn 9, table 11.

@@ -2,6 +2,8 @@ allowBuilds:
   esbuild: true
 shellEmulator: true
 trustPolicy: no-downgrade
+trustPolicyExclude:
+  - vite
 packages:
   - packages/*
   - apps/*

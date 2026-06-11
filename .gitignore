@@ -8,6 +8,7 @@ coverage/
 .vscode/
 apps/docs/.vitepress/cache/
 apps/docs/.vitepress/dist/
+apps/docs/components/
 *.tsbuildinfo
 .env
 .env.*

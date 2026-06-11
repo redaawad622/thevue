@@ -1,0 +1,16 @@
+{
+  "name": "docs",
+  "type": "module",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "node scripts/copy-docs.js && vitepress dev",
+    "build": "node scripts/copy-docs.js && vitepress build",
+    "preview": "vitepress preview"
+  },
+  "devDependencies": {
+    "typescript": "^6.0.3",
+    "vitepress": "^1.2.3",
+    "vue": "^3.5.35"
+  }
+}
