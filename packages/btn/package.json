@@ -38,5 +38,8 @@
   "peerDependencies": {
     "@thevue/core": "workspace:*",
     "vue": ">=3.3.0"
+  },
+  "dependencies": {
+    "@thevue/icons": "workspace:*"
   }
 }

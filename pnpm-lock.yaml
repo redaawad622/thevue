@@ -65,6 +65,9 @@ importers:
       '@thevue/core':
         specifier: workspace:*
         version: link:../core
+      '@thevue/icons':
+        specifier: workspace:*
+        version: link:../icons
       vue:
         specifier: '>=3.3.0'
         version: 3.5.35(typescript@6.0.3)

@@ -92,7 +92,8 @@ const packageJson = {
 const tsconfig = `{
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
-    "rootDir": "src"
+    "rootDir": "src",
+    "paths": {}
   },
   "include": ["src/**/*.ts", "src/**/*.vue"]
 }
