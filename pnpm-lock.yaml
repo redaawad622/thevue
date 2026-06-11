@@ -98,6 +98,27 @@ importers:
       '@tanstack/vue-virtual':
         specifier: ^3.13.28
         version: 3.13.28(vue@3.5.35(typescript@6.0.3))
+      '@thevue/core':
+        specifier: workspace:*
+        version: link:../core
+      vue:
+        specifier: '>=3.3.0'
+        version: 3.5.35(typescript@6.0.3)
+
+  packages/vue:
+    dependencies:
+      '@thevue/btn':
+        specifier: workspace:*
+        version: link:../btn
+      '@thevue/core':
+        specifier: workspace:*
+        version: link:../core
+      '@thevue/icons':
+        specifier: workspace:*
+        version: link:../icons
+      '@thevue/table':
+        specifier: workspace:*
+        version: link:../table
       vue:
         specifier: '>=3.3.0'
         version: 3.5.35(typescript@6.0.3)

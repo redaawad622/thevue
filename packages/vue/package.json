@@ -1,0 +1,46 @@
+{
+  "name": "@thevue/vue",
+  "type": "module",
+  "version": "0.0.1",
+  "description": "Convenience aggregate bundle for the thevue framework",
+  "license": "MIT",
+  "homepage": "https://github.com/redaawad622/thevue/tree/main/packages/vue#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/redaawad622/thevue.git",
+    "directory": "packages/vue"
+  },
+  "keywords": [
+    "vue",
+    "thevue"
+  ],
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs"
+    },
+    "./style": "./dist/style.css"
+  },
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "vite build",
+    "dev": "vite build --watch",
+    "test": "vitest run"
+  },
+  "peerDependencies": {
+    "vue": ">=3.3.0"
+  },
+  "dependencies": {
+    "@thevue/btn": "workspace:*",
+    "@thevue/core": "workspace:*",
+    "@thevue/icons": "workspace:*",
+    "@thevue/table": "workspace:*"
+  }
+}
