@@ -19,10 +19,10 @@ without re-deriving context. The authoritative full plan is
 | 7 | `@thevue/vue` bundle | ✅ done (`897ff3a`) |
 | 8 | `apps/playground` | ✅ done (`e972189`) |
 | 9 | `apps/docs` (VitePress) | ✅ done (`f8afeb2`) |
-| 10 | `@thevue/modal` component | ⏳ planned |
+| 10 | `@thevue/modal` component | ✅ done (`dcfe8c8`) |
 
 **Test counts (all headless Chromium / browser mode):** core 21, icons 7,
-btn 9, table 11.
+btn 9, table 24, modal 9, vue 1.
 
 ## Per-phase gate (apply to every remaining phase)
 
