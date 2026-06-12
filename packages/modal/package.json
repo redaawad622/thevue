@@ -1,18 +1,19 @@
 {
-  "name": "@thevue/vue",
+  "name": "@thevue/modal",
   "type": "module",
   "version": "0.0.1",
-  "description": "Convenience aggregate bundle for the thevue framework",
+  "description": "Modal component for the thevue framework",
   "license": "MIT",
-  "homepage": "https://github.com/redaawad622/thevue/tree/main/packages/vue#readme",
+  "homepage": "https://github.com/redaawad622/thevue/tree/main/packages/modal#readme",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/redaawad622/thevue.git",
-    "directory": "packages/vue"
+    "directory": "packages/modal"
   },
   "keywords": [
     "vue",
-    "thevue"
+    "thevue",
+    "modal"
   ],
   "sideEffects": [
     "**/*.css"
@@ -35,13 +36,10 @@
     "test": "vitest run"
   },
   "peerDependencies": {
+    "@thevue/core": "workspace:*",
     "vue": ">=3.3.0"
   },
   "dependencies": {
-    "@thevue/btn": "workspace:*",
-    "@thevue/core": "workspace:*",
-    "@thevue/icons": "workspace:*",
-    "@thevue/modal": "workspace:*",
-    "@thevue/table": "workspace:*"
+    "@thevue/icons": "workspace:*"
   }
 }

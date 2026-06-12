@@ -3,6 +3,7 @@ import { useTheme } from '@thevue/vue'
 import { computed, onMounted, onUnmounted, ref } from 'vue'
 import BtnPage from './pages/BtnPage.vue'
 import IconsPage from './pages/IconsPage.vue'
+import ModalPage from './pages/ModalPage.vue'
 import TablePage from './pages/TablePage.vue'
 import ThemePage from './pages/ThemePage.vue'
 
@@ -26,6 +27,7 @@ const currentPage = computed(() => {
     case '#/table': return TablePage
     case '#/icons': return IconsPage
     case '#/theme': return ThemePage
+    case '#/modal': return ModalPage
     default: return BtnPage
   }
 })
@@ -36,6 +38,7 @@ const toggleTheme = () => setDark(!isDark.value)
 const navItems = [
   { path: '#/btn', label: 'Button' },
   { path: '#/table', label: 'Table' },
+  { path: '#/modal', label: 'Modal' },
   { path: '#/icons', label: 'Icons' },
   { path: '#/theme', label: 'Theme Tokens' },
 ]

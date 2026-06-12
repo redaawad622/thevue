@@ -8,6 +8,7 @@ describe('thevue bundle plugin', () => {
       template: `
         <div>
           <Btn data-testid="global-btn">Click me</Btn>
+          <Modal :model-value="true" title="Plugin Modal">Hello</Modal>
         </div>
       `,
     }
@@ -22,5 +23,9 @@ describe('thevue bundle plugin', () => {
     const btn = screen.container.querySelector('button.thevue-btn')
     expect(btn).not.toBeNull()
     expect(btn!.textContent).toBe('Click me')
+
+    const modal = document.body.querySelector('.thevue-modal')
+    expect(modal).not.toBeNull()
+    expect(modal!.textContent).toContain('Plugin Modal')
   })
 })

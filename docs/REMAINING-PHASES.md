@@ -18,7 +18,8 @@ without re-deriving context. The authoritative full plan is
 | 6b | table add-ons | ✅ done (`e3b4ca8`) |
 | 7 | `@thevue/vue` bundle | ✅ done (`897ff3a`) |
 | 8 | `apps/playground` | ✅ done (`e972189`) |
-| 9 | `apps/docs` (VitePress) | ✅ done — this commit |
+| 9 | `apps/docs` (VitePress) | ✅ done (`f8afeb2`) |
+| 10 | `@thevue/modal` component | ⏳ planned |
 
 **Test counts (all headless Chromium / browser mode):** core 21, icons 7,
 btn 9, table 11.
@@ -189,3 +190,29 @@ component pages.
 2. Confirm the GitHub Actions **CI** run is green after the first push.
 3. Merge the Changesets "Version Packages" PR when ready for the first `0.1.0`
    publish. (No changesets have been authored yet — add them when publishing.)
+
+---
+
+## Phase 10 — `@thevue/modal` component
+
+Scaffold and build `@thevue/modal` component using `pnpm create-package --name modal --display-name "Modal" --layer component`.
+
+**Features to build (TDD each):**
+1. **Modal Overlay & Container** — Backdrop overlay element that supports transitions (fade-in) and clicking to close. Center the dialog box itself.
+2. **Dialog Body & Focus Trap** — A keyboard-accessible container with focus trap. Use `aria-modal="true"`, `role="dialog"`, and bind `aria-labelledby`/`aria-describedby` dynamically.
+3. **Esc Key & Close Behavior** — Listen for the escape key to close the modal. Prevent scrolling on body/HTML when the modal is open.
+4. **Header, Footer & Slots** — Slots for custom header content (title/subtitle), body content, and actions in the footer.
+5. **Sizes & Variations** — Supports props like `size` ('sm', 'md', 'lg', 'xl', 'full'), and `closeOnOverlayClick` / `closeOnEsc`.
+6. **Teleport Support** — Teleport the modal markup to `body` by default to avoid stacking context issues, with a prop to disable it.
+
+**Integration:**
+- Add `@thevue/modal` to the convenient aggregate bundle `@thevue/vue`.
+- Register the global component in `@thevue/vue`'s plugin.
+- Add showcase page `/modal` to the playground (`apps/playground`).
+- Add/copy docs to VitePress docs (`apps/docs`).
+
+**Docs (📄 required):**
+- Create `packages/modal/README.md` with features, installation, API table (props, slots, events), and code examples.
+- Create `packages/modal/docs/DECISIONS.md` to document the design of the focus trap, transitions, and accessibility.
+
+**Gate + commit:** `Phase 10: @thevue/modal — core component, focus trap, slots, playground, and docs`.

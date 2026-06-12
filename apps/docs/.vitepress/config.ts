@@ -28,6 +28,7 @@ export default defineConfig({
           { text: 'Icons', link: '/components/icons' },
           { text: 'Button', link: '/components/btn' },
           { text: 'Data Table', link: '/components/table' },
+          { text: 'Modal', link: '/components/modal' },
           { text: 'Column API Reference', link: '/components/column-api' },
           { text: 'Aggregate Bundle (@thevue/vue)', link: '/components/vue' },
         ],

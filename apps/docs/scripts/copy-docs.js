@@ -38,6 +38,10 @@ const filesToCopy = [
     dest: 'column-api.md',
   },
   {
+    src: 'packages/modal/README.md',
+    dest: 'modal.md',
+  },
+  {
     src: 'packages/vue/README.md',
     dest: 'vue.md',
   },

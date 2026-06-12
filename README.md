@@ -45,6 +45,7 @@ import '@thevue/btn/style'
 | `@thevue/core` | L0 | Design tokens, theme engine, Vue plugin — the only required package | [README](./packages/core/README.md) |
 | `@thevue/icons` | L1 | Icon component on top of Iconify (200k+ icons) | [README](./packages/icons/README.md) |
 | `@thevue/btn` | L2 | Button + ButtonGroup | [README](./packages/btn/README.md) |
+| `@thevue/modal` | L2 | Modal + dialog container component | [README](./packages/modal/README.md) |
 | `@thevue/table` | L2 | Data table on TanStack Table v8 | [README](./packages/table/README.md) |
 | `@thevue/vue` | L3 | Full framework bundle (re-exports everything) | [README](./packages/vue/README.md) |
 

@@ -124,6 +124,18 @@ importers:
         specifier: '>=3.3.0'
         version: 3.5.35(typescript@6.0.3)
 
+  packages/modal:
+    dependencies:
+      '@thevue/core':
+        specifier: workspace:*
+        version: link:../core
+      '@thevue/icons':
+        specifier: workspace:*
+        version: link:../icons
+      vue:
+        specifier: '>=3.3.0'
+        version: 3.5.35(typescript@6.0.3)
+
   packages/table:
     dependencies:
       '@tanstack/vue-table':
@@ -150,6 +162,9 @@ importers:
       '@thevue/icons':
         specifier: workspace:*
         version: link:../icons
+      '@thevue/modal':
+        specifier: workspace:*
+        version: link:../modal
       '@thevue/table':
         specifier: workspace:*
         version: link:../table
