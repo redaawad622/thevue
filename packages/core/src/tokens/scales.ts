@@ -46,18 +46,19 @@ export const space: Record<SpaceKey, string> = {
 
 export const radius: Record<RadiusKey, string> = {
   none: '0',
-  sm: '0.125rem',
-  md: '0.375rem',
-  lg: '0.5rem',
-  xl: '0.75rem',
+  sm: '0.25rem',
+  md: '0.5rem',
+  lg: '0.75rem',
+  xl: '1rem',
   full: '9999px',
 }
 
+/** Soft, layered elevation with a faint cool (slate) tint — the crisp-modern signature. */
 export const shadow: Record<ShadowKey, string> = {
-  sm: '0 1px 2px 0 rgb(0 0 0 / 0.05)',
-  md: '0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)',
-  lg: '0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)',
-  xl: '0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1)',
+  sm: '0 1px 2px 0 rgb(15 23 42 / 0.06)',
+  md: '0 4px 8px -2px rgb(15 23 42 / 0.10), 0 2px 4px -2px rgb(15 23 42 / 0.06)',
+  lg: '0 12px 20px -4px rgb(15 23 42 / 0.12), 0 4px 8px -4px rgb(15 23 42 / 0.08)',
+  xl: '0 24px 32px -8px rgb(15 23 42 / 0.14), 0 8px 12px -6px rgb(15 23 42 / 0.10)',
 }
 
 export const z: Record<ZIndexKey, number> = {

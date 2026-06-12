@@ -65,7 +65,7 @@ pnpm docs:dev    # VitePress docs site
 pnpm create-package --name modal --display-name "Modal" --layer component
 ```
 
-See [docs/ARCHITECTURE.md](./docs/ARCHITECTURE.md) for the package layer rules, build output format, and versioning strategy, and [docs/SPEC.md](./docs/SPEC.md) for the original project spec.
+See [docs/ARCHITECTURE.md](./docs/ARCHITECTURE.md) for the package layer rules, build output format, and versioning strategy, [docs/DESIGN-LANGUAGE.md](./docs/DESIGN-LANGUAGE.md) for the design language (principles + color/shape identity), and [docs/SPEC.md](./docs/SPEC.md) for the original project spec.
 
 ## License
 

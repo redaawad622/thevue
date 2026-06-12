@@ -1,6 +1,18 @@
 import { describe, expect, it } from 'vitest'
 import { createTheme, darkTheme, lightTheme } from '../src/index'
 
+describe('brand identity tokens', () => {
+  it('primary accent is the thevue violet/iris', () => {
+    expect(lightTheme.tokens.colors.primary[600]).toBe('#7c3aed')
+    expect(lightTheme.tokens.colors.primary[500]).toBe('#8b5cf6')
+  })
+
+  it('uses the crisp-modern radius scale', () => {
+    expect(lightTheme.tokens.radius.md).toBe('0.5rem')
+    expect(lightTheme.tokens.radius.lg).toBe('0.75rem')
+  })
+})
+
 describe('built-in themes', () => {
   it('light theme is not dark, dark theme is', () => {
     expect(lightTheme.dark).toBe(false)

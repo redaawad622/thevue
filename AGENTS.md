@@ -3,7 +3,9 @@
 Operating guide for AI agents (and humans) working on **thevue**. Read this
 before touching code. The product spec is [`docs/SPEC.md`](./docs/SPEC.md); the
 remaining roadmap is [`docs/REMAINING-PHASES.md`](./docs/REMAINING-PHASES.md);
-the architecture rationale is [`docs/ARCHITECTURE.md`](./docs/ARCHITECTURE.md).
+the architecture rationale is [`docs/ARCHITECTURE.md`](./docs/ARCHITECTURE.md);
+the design language (principles, color/shape identity) is
+[`docs/DESIGN-LANGUAGE.md`](./docs/DESIGN-LANGUAGE.md).
 
 ## What this project is
 

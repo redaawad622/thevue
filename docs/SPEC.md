@@ -3,6 +3,11 @@
 > Paste this entire document into Claude Code at project start.
 > Replace `[NAME]` with your chosen framework name before using.
 
+> **Note:** This is the original project-bootstrap prompt, kept for history. The
+> visual system has since been formalized in
+> [`DESIGN-LANGUAGE.md`](./DESIGN-LANGUAGE.md) — read it for the current
+> principles, color, and shape identity; where the two differ, it wins.
+
 ---
 
 ## PROJECT IDENTITY

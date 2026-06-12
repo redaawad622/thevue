@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Read first
 
-[`AGENTS.md`](./AGENTS.md) is the canonical operating guide and supersedes this file where they overlap — read it before touching code. Deeper references: [`docs/SPEC.md`](./docs/SPEC.md) (product spec), [`docs/ARCHITECTURE.md`](./docs/ARCHITECTURE.md) (rationale), [`docs/REMAINING-PHASES.md`](./docs/REMAINING-PHASES.md) (roadmap). The button package (`packages/btn/`) and its `docs/DECISIONS.md` are the reference implementation.
+[`AGENTS.md`](./AGENTS.md) is the canonical operating guide and supersedes this file where they overlap — read it before touching code. Deeper references: [`docs/SPEC.md`](./docs/SPEC.md) (product spec), [`docs/ARCHITECTURE.md`](./docs/ARCHITECTURE.md) (rationale), [`docs/DESIGN-LANGUAGE.md`](./docs/DESIGN-LANGUAGE.md) (design language — principles, color/shape identity), [`docs/REMAINING-PHASES.md`](./docs/REMAINING-PHASES.md) (roadmap). The button package (`packages/btn/`) and its `docs/DECISIONS.md` are the reference implementation.
 
 ## What this is
 
